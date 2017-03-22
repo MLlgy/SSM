@@ -27,9 +27,9 @@ public class PersonImpl implements IPersonService {
         return mapper.selectByPrimaryKey(id);
     }
 
-//    public List<Person> getAllDates() {
-//        return mapper.getAllPerson();
-//    }
+    public List<Person> getAllDates() {
+        return mapper.getAllPerson();
+    }
 
 
 }

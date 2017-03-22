@@ -23,4 +23,6 @@ public interface PersonMapper {
 
     int updateByPrimaryKey(Person record);
 
+    List<Person> getAllPerson();
+
 }

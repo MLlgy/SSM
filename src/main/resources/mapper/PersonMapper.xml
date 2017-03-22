@@ -109,7 +109,7 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
 
-    <!--<select id="getAllPerson" resultMap="BaseResultMap" parameterType="ssm.model.Person">-->
-        <!--SELECT  * FROM  person;-->
-    <!--</select>-->
+    <select id="getAllPerson" resultMap="BaseResultMap" parameterType="ssm.model.Person">
+        SELECT  * FROM  person;
+    </select>
 </mapper>

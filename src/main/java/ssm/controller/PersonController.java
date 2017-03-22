@@ -2,12 +2,14 @@ package ssm.controller;
 
 //import com.example.domain.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ssm.model.Person;
 import ssm.service.IPersonService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -21,11 +23,12 @@ public class PersonController {
     private IPersonService iPersonService;
 
     @RequestMapping(value = "/all",method = RequestMethod.GET)
-    public String getAllPerson(){
+    public String getAllPerson(HttpServletRequest request, Model model){
         String str = "";
 
-//        List<Person> list =  iPersonService.getAllDates();
-        Person list = iPersonService.getaById(1);
-        return list.getName()+"  ---  ";
+        List<Person> list =  iPersonService.getAllDates();
+//        Person list = iPersonService.getaById(1);
+        model.addAttribute("userList",list);
+        return "getAllPerson" ;
     }
 }

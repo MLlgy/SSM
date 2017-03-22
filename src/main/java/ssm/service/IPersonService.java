@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface IPersonService {
 
-//    List<Person> getAllDates();
+    List<Person> getAllDates();
     Person getaById(Integer id);
 }
